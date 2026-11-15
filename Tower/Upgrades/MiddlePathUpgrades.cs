@@ -84,7 +84,7 @@ namespace VoidBananaFarmer.Tower.Upgrades
                 towerModel.ApplyDisplay<Displays.TowerDisplays.BananaGunDisplay>();
                 towerModel.GetAttackModel().weapons[0].projectile.ApplyDisplay<Displays.ProjectileDisplays.RottenBananaProjectileDisplay>();
                 towerModel.GetAttackModel().weapons[0].projectile.AddBehavior(new DamageModel("DamageModel_", 2, 3, true, true, true, BloonProperties.Frozen |
-                    BloonProperties.Lead,BloonProperties.Frozen | BloonProperties.Lead, false));
+                    BloonProperties.Lead,BloonProperties.Frozen | BloonProperties.Lead, false, false));
             }
 
 

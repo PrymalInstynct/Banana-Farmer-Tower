@@ -50,7 +50,7 @@ namespace VoidBananaFarmer.Tower.Upgrades
                 bananaGunWeapon.rate = .175f;
                 bananaGunProj.RemoveBehavior<DamageModel>();
                 bananaGunProj.RemoveBehavior<SetSpriteFromPierceModel>();
-                bananaGunProj.AddBehavior(new DamageModel("DamageModel_", 6, 10, true, true, true, BloonProperties.None,BloonProperties.None, false));
+                bananaGunProj.AddBehavior(new DamageModel("DamageModel_", 6, 10, true, true, true, BloonProperties.None,BloonProperties.None, false, false));
                 bananaGunProj.AddBehavior(new WindModel("WindModel_", 0, 200, 100, true, null, 0));
                 bananaGunProj.GetBehavior<ArriveAtTargetModel>().timeToTake = 0.075f;
                 bananaGunProj.pierce = 9;
@@ -69,7 +69,7 @@ namespace VoidBananaFarmer.Tower.Upgrades
                 towerModel.GetBehavior<CollectCashZoneModel>().attractRange = float.MaxValue;
                 towerModel.AddBehavior(bananaGun);
                 towerModel.AddBehavior(BananaFarmAttackModel);
-                towerModel.AddBehavior(new MonkeyCityIncomeSupportModel("_MonkeyCityIncomeSupport", true, "ParagonBananaFarmerBuff", 3.1f, null, "MonkeyCityBuff", "BuffIconVillagexx4"));
+                towerModel.AddBehavior(new MonkeyCityIncomeSupportModel("_MonkeyCityIncomeSupport", "ParagonBananaFarmerBuff", 3.1f, null, "MonkeyCityBuff", "BuffIconVillagexx4"));
                 towerModel.AddBehavior(new OverrideCamoDetectionModel("OverrideCamoDetectionModel_", true));
                 towerModel.GetDescendants<FilterInvisibleModel>().ForEach(model => model.isActive = false);
                 UpdateAttackModelRange(towerModel);
